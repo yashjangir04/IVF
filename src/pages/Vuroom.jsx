@@ -64,7 +64,7 @@ const Vuroom = () => {
       sharedLinks: [
         {
           name: "Copy Link",
-          url: `http://localhost:5173/room/${roomID}`,
+          url: `https://intervu-app.vercel.app/room/${roomID}`,
         },
       ],
       scenario: {
