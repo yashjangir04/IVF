@@ -19,7 +19,7 @@ const Vuroom = () => {
     const verifyToken = async () => {
       const token = localStorage.getItem("token");
       if (!token) {
-        navigate("/login");
+        navigate("https://intervu-app.vercel.app/login");
         return;
       }
 
@@ -36,14 +36,14 @@ const Vuroom = () => {
         if (!data.success) {
           localStorage.removeItem("token");
           localStorage.removeItem("loggedInUser");
-          navigate(`/room/${roomID}`);
+          navigate(`https://intervu-app.vercel.app/room/${roomID}`);
         } else {
           setloggedInUser(data.username);
         }
       } catch (err) {
         console.error("Verification error:", err);
         localStorage.removeItem("token");
-        navigate("/login");
+        navigate("https://intervu-app.vercel.app/login");
       }
     };
 
@@ -83,7 +83,7 @@ const Vuroom = () => {
   const navToRoom = async () => {
     const token = localStorage.getItem("token");
     if (!token) {
-      navigate("/login"); // No token, go to login
+      navigate("https://intervu-app.vercel.app/login"); // No token, go to login
       return; 
     }
 
@@ -101,16 +101,16 @@ const Vuroom = () => {
         // Token invalid or expired
         localStorage.removeItem("token");
         localStorage.removeItem("loggedInUser");
-        navigate("/login"); // redirect to login
+        navigate("https://intervu-app.vercel.app/login"); // redirect to login
       } else {
         // Authenticated — open the /code/:roomID page in a new tab
-        window.open(`/code/${roomID}`, '_blank');
+        window.open(`https://intervu-app.vercel.app/code/${roomID}`, '_blank');
       }
     } catch (err) {
       console.error("Verification error:", err);
       localStorage.removeItem("token");
       localStorage.removeItem("loggedInUser");
-      navigate("/login");
+      navigate("https://intervu-app.vercel.app/login");
     }
   };
 
