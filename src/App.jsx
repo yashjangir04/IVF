@@ -19,7 +19,7 @@ function App() {
         <Route path="/signup" element={<Signup />}></Route>
         <Route path="/home" element={<Home />}></Route>
         <Route path="/room/:roomID" element={< Vuroom />}></Route>
-        <Route path="/code/:roomID" element={< Code />}></Route>
+        <Route path="https://intervu-app.vercel.app/code/:roomID" element={< Code />}></Route>
       </Routes>
       <ToastContainer newestOnTop theme="dark"/>
     </>
