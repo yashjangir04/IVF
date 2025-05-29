@@ -64,19 +64,12 @@ const Vuroom = () => {
       sharedLinks: [
         {
           name: "Copy Link",
-          url: `https://intervu-app.vercel.app/room/${roomID}`,
+          url: `http://localhost:5173/room/${roomID}`,
         },
       ],
       scenario: {
         mode: ZegoUIKitPrebuilt.OneONoneCall,
-      },
-      onJoinRoom: (users) => {
-        if (users.length >= 2) {
-          alert("Room is full. Try again later.");
-          // You can redirect or just leave room
-          window.location.href = "/";
-        }
-      },
+      }
     });
   }, [roomID]);
 
@@ -104,7 +97,7 @@ const Vuroom = () => {
         navigate("/login"); // redirect to login
       } else {
         // Authenticated — open the /code/:roomID page in a new tab
-        window.open(`https://intervu-app.vercel.app/code/${roomID}`, '_blank');
+        window.open(`/code/${roomID}`, '_blank');
       }
     } catch (err) {
       console.error("Verification error:", err);
